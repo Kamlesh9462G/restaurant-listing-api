@@ -1,0 +1,1 @@
+module.exports.restaurants = require("./restaurant.model");
