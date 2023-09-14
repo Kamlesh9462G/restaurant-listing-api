@@ -5,12 +5,12 @@ let server;
 
 require("dotenv").config({ path: path.join(__dirname, "../.env") });
 
-let PORT = process.env.PORT;
+let PORT = 8080;
 
 mongoose.set("strictQuery", true);
 
 mongoose
-  .connect(process.env.MONGODB_URI, {
+  .connect("mongodb+srv://Kamal9462:aRSyD6YqCFkjrTZX@cluster0.llk00.mongodb.net/restaurant-listing?retryWrites=true&w=majority", {
     useNewUrlParser: true,
   })
   .then(() => {
