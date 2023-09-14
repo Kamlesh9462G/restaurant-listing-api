@@ -5,7 +5,7 @@ let server;
 
 require("dotenv").config({ path: path.join(__dirname, "../.env") });
 
-let PORT = 8080;
+const port = process.env.PORT || 3000;
 
 mongoose.set("strictQuery", true);
 
@@ -16,7 +16,7 @@ mongoose
   .then(() => {
 
     console.log("MongoDB Connected");
-    server = app.listen(PORT, () => {
+    server = app.listen(port,"0.0.0.0", () => {
       console.log(`HTTPS Server running on port  ${PORT}`);
     });
 
