@@ -10,6 +10,9 @@ const restaurantSchema = mongoose.Schema({
   contact: {
     type: String,
   },
+  imageLink:{
+    type:String
+  }
 });
 
 const restaurants = mongoose.model("restaurants", restaurantSchema);
