@@ -6,6 +6,8 @@ const addRestaurant = {
     name: Joi.string().required(),
     address: Joi.string().required(),
     contact: Joi.string().required(),
+    imageLink: Joi.string().required(),
+    
   }),
 };
 const updateRestaurant = {
@@ -16,6 +18,7 @@ const updateRestaurant = {
     name: Joi.string().required(),
     address: Joi.string().required(),
     contact: Joi.string().required(),
+    imageLink: Joi.string().required(),
   }),
 };
 
