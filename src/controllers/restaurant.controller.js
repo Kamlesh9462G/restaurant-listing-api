@@ -26,6 +26,8 @@ const getRestaurants = catchAsync(async (req, res) => {
 });
 
 const updateRestaurant = catchAsync(async (req, res) => {
+  const user = await userService.getUserById(req.body.userId);
+  req.body["addedBy"] = user.name;
   const updatedRes = await restaurantService.updateRestaurant(
     req.params.restaurantId,
     req.body

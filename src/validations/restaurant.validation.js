@@ -19,6 +19,7 @@ const updateRestaurant = {
     address: Joi.string().required(),
     contact: Joi.string().required(),
     imageLink: Joi.string().required(),
+    userId: Joi.string().custom(objectId).required(),
   }),
 };
 
