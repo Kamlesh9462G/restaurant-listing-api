@@ -7,7 +7,7 @@ const addRestaurant = {
     address: Joi.string().required(),
     contact: Joi.string().required(),
     imageLink: Joi.string().required(),
-    
+    userId: Joi.string().custom(objectId).required(),
   }),
 };
 const updateRestaurant = {
@@ -24,5 +24,5 @@ const updateRestaurant = {
 
 module.exports = {
   addRestaurant,
-  updateRestaurant
+  updateRestaurant,
 };

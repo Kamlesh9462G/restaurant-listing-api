@@ -1,9 +1,11 @@
-const { restaurantService } = require("../services");
+const { restaurantService,userService } = require("../services");
 const httpStatus = require("http-status");
 const catchAsync = require("../utils/catchAsync")
 
 
 const addRestaurant = catchAsync(async (req, res) => {
+  const user = await userService.getUserById(req.body.userId);
+  req.body["addedBy"] = user.name;
   const rest = await restaurantService.addRestaurant(req.body);
   return res.status(httpStatus.CREATED).json({
     message: "restaurant added successfully!!",
